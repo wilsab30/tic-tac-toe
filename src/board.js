@@ -1,3 +1,6 @@
+import Player from 'player';
+
+
 var Board = function() {
   this.board = {
     1: ' ',
