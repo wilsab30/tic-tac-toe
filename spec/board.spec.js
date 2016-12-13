@@ -2,11 +2,14 @@ import Board from 'board';
 
 
 describe('Board', function() {
-  describe('newGame', function() {
-    it('should create new empty game board', function() {
-
+  it('should create new empty game board', function() {
+    var socks = new Board();
+    for(var i = 1; i < 10; i++) {
+      expect(socks.board[i]).toEqual(' ');
+      }
     });
-  });
+  // describe('newGame', function() {
+  // });
   describe('checkWinDraw', function() {
     it('should check arrays for posible win', function() {
 
