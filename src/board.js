@@ -41,5 +41,5 @@ Board.prototype.clearBoard = function() {
 };
 
 
-socks = new Board();
-// export default Board;
+// socks = new Board();
+export default Board;
