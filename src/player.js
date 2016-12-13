@@ -5,16 +5,13 @@ import Board from 'board';
 var Player = function() {
   this.player1 = "X";
   this.player2 = "O";
-  this.currentPlayer = this.player2;
+  this.currentPlayer = this.player1;
 };
 
 Player.prototype.play = function(selection, board) {
-  if (this.currentPlayer == this.player1) {
-    this.currentPlayer = this.player2;
-  } else {
-    this.currentPlayer = this.player1;
+  if (board.validMove(selection, this.currentPlayer) === false) {
+    return;
   }
-  board.validMove(selection, this.currentPlayer);
 
   board.print();
   // console.log('\n' +
@@ -23,6 +20,11 @@ Player.prototype.play = function(selection, board) {
   //     ' ' + this.board[4] + ' | ' + this.board[5] + ' | ' + this.board[6] + '\n' +
   //     ' ---------\n' +
   //     ' ' + this.board[7] + ' | ' + this.board[8] + ' | ' + this.board[9] + '\n');
+  if (this.currentPlayer == this.player1) {
+    this.currentPlayer = this.player2;
+  } else {
+    this.currentPlayer = this.player1;
+  }
 };
 
 

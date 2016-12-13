@@ -43,8 +43,10 @@ Board.prototype.validMove = function(selection, symbol) {
 
   if (this.board[selection] == ' '){
     this.board[selection] = symbol;
-    console.log('yipee');
-    console.log(this.board[selection]);
+    return true;
+  } else {
+    console.log('invalid move');
+    return false;
   }
 };
 
