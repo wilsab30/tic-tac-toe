@@ -33,10 +33,10 @@ Board.prototype.print = function() {
 };
 // Board.prototype.newGame = function() {};
 
-Board.prototype.checkWinDraw = function() {
+Board.prototype.checkWin = function() {
 
   var win = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
-  for (var i=0; i<7; i++) {
+  for (var i=0; i<8; i++) {
     if (this.board[win[i][0]] === this.board[win[i][1]] && this.board[win[i][1]] === this.board[win[i][2]] && this.board[win[i][0]] !== ' ') {
       console.log('You are a winner player ' + this.board[win[i][1]] + '!!!!!');
       this.clearBoard();
@@ -44,6 +44,20 @@ Board.prototype.checkWinDraw = function() {
     }
   }
 
+};
+
+Board.prototype.checkDraw = function() {
+  var counter = 0;
+  for (var j=1; j<10; j++) {
+    if (this.board[j] !== ' ') {
+      counter += 1;
+    }
+  }
+  console.log(counter);
+  if (counter === 9) {
+    console.log("IT'S A TIE. WOW.");
+    return true;
+  }
 };
 
 Board.prototype.exitGame = function() {};

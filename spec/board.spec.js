@@ -11,7 +11,7 @@ describe('Board', function() {
     });
   // describe('newGame', function() {
   // });
-  describe('checkWinDraw', function() {
+  describe('checkWin', function() {
     it('should check arrays for posible win', function() {
       var game = new Board();
       var players = new Player();
@@ -20,7 +20,7 @@ describe('Board', function() {
       players.play(4, game);
       players.play(2, game);
       game.board[6] = 'X'
-  expect(game.checkWinDraw()).toEqual(true);
+  expect(game.checkWin()).toEqual(true);
     });
     it('should not return true if  player has not won yet', function() {
       var game = new Board();
@@ -29,7 +29,7 @@ describe('Board', function() {
       players.play(1, game);
       players.play(4, game);
       players.play(2, game);
-  expect(game.checkWinDraw()).toBeFalsy();
+  expect(game.checkWin()).toBeFalsy();
     });
   });
   describe('clearBoard', function() {
