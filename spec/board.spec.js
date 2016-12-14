@@ -22,7 +22,7 @@ describe('Board', function() {
       game.board[6] = 'X'
   expect(game.checkWinDraw()).toEqual(true);
     });
-    it('should not return true if  player has not won', function() {
+    it('should not return true if  player has not won yet', function() {
       var game = new Board();
       var players = new Player();
       players.play(5, game);
@@ -34,8 +34,18 @@ describe('Board', function() {
   });
   describe('clearBoard', function() {
     it('should remove all marks from board', function() {
-
-    });
+      var game = new Board();
+      var players = new Player();
+      players.play(5, game);
+      players.play(1, game);
+      players.play(4, game);
+      players.play(2, game);
+      players.play(6, game);
+      game.clearBoard
+      for(var i = 1; i < 10; i++) {
+        expect(game.board[i]).toEqual(' ');
+        }
+      });
   });
   describe('exitGame', function() {
     it('should end game', function() {
