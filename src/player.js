@@ -14,6 +14,7 @@ Player.prototype.play = function(selection, board) {
   }
 
   board.print();
+  
   // console.log('\n' +
   //     ' ' + this.board[1] + ' | ' + this.board[2] + ' | ' + this.board[3] + '\n' +
   //     ' ---------\n' +

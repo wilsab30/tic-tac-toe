@@ -34,7 +34,7 @@ Board.prototype.print = function() {
 // Board.prototype.newGame = function() {};
 
 Board.prototype.checkWinDraw = function() {
-
+  
 };
 
 Board.prototype.exitGame = function() {};
