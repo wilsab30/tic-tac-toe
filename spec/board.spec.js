@@ -1,4 +1,5 @@
 import Board from 'board';
+import Player from 'player';
 
 
 describe('Board', function() {
@@ -12,6 +13,14 @@ describe('Board', function() {
   // });
   describe('checkWinDraw', function() {
     it('should check arrays for posible win', function() {
+      var game = new Board();
+      var players = new Player();
+      players.play(5, game);
+      players.play(1, game);
+      players.play(4, game);
+      players.play(2, game);
+      game.board[6] = 'X'
+  expect(game.checkWinDraw()).toEqual(true);
 
     });
   });

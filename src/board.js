@@ -40,7 +40,7 @@ Board.prototype.checkWinDraw = function() {
     if (this.board[win[i][0]] === this.board[win[i][1]] && this.board[win[i][1]] === this.board[win[i][2]] && this.board[win[i][0]] !== ' ') {
       console.log('You are a winner player ' + this.board[win[i][1]] + '!!!!!');
       this.clearBoard();
-
+      return true;
     }
   }
 
