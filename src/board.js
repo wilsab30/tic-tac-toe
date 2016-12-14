@@ -60,7 +60,7 @@ Board.prototype.checkDraw = function() {
   }
 };
 
-Board.prototype.exitGame = function() {};
+// Board.prototype.exitGame = function() {};
 
 Board.prototype.validMove = function(selection, symbol) {
 

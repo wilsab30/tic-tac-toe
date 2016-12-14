@@ -17,8 +17,10 @@ Player.prototype.play = function(selection, board) {
 
   if (board.checkWin()){
     board.clearBoard
-  }
-  board.checkDraw();
+  };
+  if (board.checkDraw()){
+    board.clearBoard
+  };
 
   // console.log('\n' +
   //     ' ' + this.board[1] + ' | ' + this.board[2] + ' | ' + this.board[3] + '\n' +
