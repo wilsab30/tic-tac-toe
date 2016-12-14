@@ -54,7 +54,7 @@ Board.prototype.checkDraw = function() {
     }
   }
   console.log(counter);
-  if (counter === 9) {
+  if (counter === 9 && this.checkWin() !== true) {
     console.log("IT'S A TIE. WOW.");
     return true;
   }

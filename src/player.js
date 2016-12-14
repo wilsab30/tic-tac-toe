@@ -15,7 +15,9 @@ Player.prototype.play = function(selection, board) {
 
   board.print();
 
-  board.checkWin();
+  if (board.checkWin()){
+    board.clearBoard
+  }
   board.checkDraw();
 
   // console.log('\n' +

@@ -32,6 +32,45 @@ describe('Board', function() {
   expect(game.checkWin()).toBeFalsy();
     });
   });
+  describe('checkDraw', function() {
+    it('should check arrays for posible win', function() {
+      var game = new Board();
+      var players = new Player();
+      players.play(5, game);
+      players.play(1, game);
+      players.play(4, game);
+      players.play(2, game);
+      players.play(3, game);
+      players.play(6, game);
+      players.play(9, game);
+      players.play(7, game);
+      game.board[8] = 'X'
+  expect(game.checkDraw()).toEqual(true);
+    });
+    it('should not return true if  player has not won yet', function() {
+      var game = new Board();
+      var players = new Player();
+      players.play(5, game);
+      players.play(1, game);
+      players.play(4, game);
+      game.board[6] = 'X'
+  expect(game.checkDraw()).toBeFalsy();
+    });
+    it('should not return true if  player has won with full board', function() {
+      var game = new Board();
+      var players = new Player();
+      players.play(5, game);
+      players.play(1, game);
+      players.play(4, game);
+      players.play(2, game);
+      players.play(3, game);
+      players.play(6, game);
+      players.play(9, game);
+      players.play(8, game);
+      game.board[7] = 'X'
+  expect(game.checkDraw()).toBeFalsy();
+    });
+  });
   describe('clearBoard', function() {
     it('should remove all marks from board', function() {
       var game = new Board();
