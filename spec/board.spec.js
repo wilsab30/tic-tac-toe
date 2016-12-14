@@ -26,8 +26,15 @@ describe('Board', function() {
     });
   });
   describe('validMove', function() {
-    it('should check to see if spot alrady contains X or O', function() {
-
+    it('should check to see if spot already contains X or O', function() {
+      var socks = new Board();
+      expect(socks.validMove(5, 'X')).toEqual(true);
+    });
+    it('should not allow move to happen twice', function() {
+      var socks = new Board();
+      socks.validMove(5, 'X');
+      expect(socks.validMove(5, 'O')).toEqual(false);
     });
   });
 });//end of board
+// comment
