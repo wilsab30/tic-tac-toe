@@ -6,21 +6,28 @@ var Player = function() {
   this.player1 = "X";
   this.player2 = "O";
   this.currentPlayer = this.player1;
+  this.game = new Board();
 };
 
-Player.prototype.play = function(selection, board) {
-  if (board.validMove(selection, this.currentPlayer) === false) {
+Player.prototype.play = function(selection) {
+  if (this.game.validMove(selection, this.currentPlayer) === false) {
     return;
   }
 
-  board.print();
+  this.game.print();
 
-  if (board.checkWin()){
-    board.clearBoard
-  };
-  if (board.checkDraw()){
-    board.clearBoard
-  };
+  if (this.game.checkWin()){
+    this.game.clearBoard();
+    console.log("A new game has been started!");
+    this.currentPlayer = this.player1;
+    return;
+  }
+  if (this.game.checkDraw()){
+    this.game.clearBoard();
+    console.log("A new game has been started!");
+    this.currentPlayer = this.player1;
+    return;
+  }
 
   // console.log('\n' +
   //     ' ' + this.board[1] + ' | ' + this.board[2] + ' | ' + this.board[3] + '\n' +

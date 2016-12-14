@@ -13,76 +13,71 @@ describe('Board', function() {
   // });
   describe('checkWin', function() {
     it('should check arrays for posible win', function() {
-      var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      players.play(2, game);
-      game.board[6] = 'X'
-  expect(game.checkWin()).toEqual(true);
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.play(2);
+      players.game.board[6] = 'X';
+  expect(players.game.checkWin()).toEqual(true);
     });
     it('should not return true if  player has not won yet', function() {
-      var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      players.play(2, game);
-  expect(game.checkWin()).toBeFalsy();
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.play(2);
+  expect(players.game.checkWin()).toBeFalsy();
     });
   });
   describe('checkDraw', function() {
     it('should check arrays for posible win', function() {
-      var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      players.play(2, game);
-      players.play(3, game);
-      players.play(6, game);
-      players.play(9, game);
-      players.play(7, game);
-      game.board[8] = 'X'
-  expect(game.checkDraw()).toEqual(true);
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.play(2);
+      players.play(3);
+      players.play(6);
+      players.play(9);
+      players.play(7);
+      players.game.board[8] = 'X';
+  expect(players.game.checkDraw()).toEqual(true);
     });
     it('should not return true if  player has not won yet', function() {
-      var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      game.board[6] = 'X'
-  expect(game.checkDraw()).toBeFalsy();
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.game.board[6] = 'X'
+  expect(players.game.checkDraw()).toBeFalsy();
     });
     it('should not return true if  player has won with full board', function() {
-      var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      players.play(2, game);
-      players.play(3, game);
-      players.play(6, game);
-      players.play(9, game);
-      players.play(8, game);
-      game.board[7] = 'X'
-  expect(game.checkDraw()).toBeFalsy();
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.play(2);
+      players.play(3);
+      players.play(6);
+      players.play(9);
+      players.play(8);
+      players.game.board[7] = 'X'
+  expect(players.game.checkDraw()).toBeFalsy();
     });
   });
   describe('clearBoard', function() {
     it('should remove all marks from board', function() {
       var game = new Board();
       var players = new Player();
-      players.play(5, game);
-      players.play(1, game);
-      players.play(4, game);
-      players.play(2, game);
-      players.play(6, game);
-      game.clearBoard
+      players.play(5);
+      players.play(1);
+      players.play(4);
+      players.play(2);
+      players.play(6);
+      players.game.clearBoard
       for(var i = 1; i < 10; i++) {
-        expect(game.board[i]).toEqual(' ');
+        expect(players.game.board[i]).toEqual(' ');
         }
       });
   });

@@ -1,8 +1,8 @@
-import Player from 'player'
+import Player from 'player';
 
 describe('Player', function() {
   describe('initialize', function() {
-    it('should create tow new palyers', function() {
+    it('should create two new palyers', function() {
 
     });
   });
