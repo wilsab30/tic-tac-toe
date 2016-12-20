@@ -1,12 +1,12 @@
-import Board from 'board';
-import Player from 'player';
+import Board from 'app/models/board';
+import Player from 'app/models/player';
 
 
 describe('Board', function() {
   it('should create new empty game board', function() {
     var socks = new Board();
     for(var i = 1; i < 10; i++) {
-      expect(socks.board[i]).toEqual(' ');
+      expect(socks.get('board')[i]).toEqual(' ');
       }
     });
   // describe('newGame', function() {
@@ -14,12 +14,13 @@ describe('Board', function() {
   describe('checkWin', function() {
     it('should check arrays for posible win', function() {
       var players = new Player();
+
       players.play(5);
       players.play(1);
       players.play(4);
       players.play(2);
-      players.game.board[6] = 'X';
-  expect(players.game.checkWin()).toEqual(true);
+      players.play(6);
+      expect(players.get('board').checkWin()).toEqual(true);
     });
     it('should not return true if  player has not won yet', function() {
       var players = new Player();
@@ -27,7 +28,7 @@ describe('Board', function() {
       players.play(1);
       players.play(4);
       players.play(2);
-  expect(players.game.checkWin()).toBeFalsy();
+  expect(players.get('board').checkWin()).toBeFalsy();
     });
   });
   describe('checkDraw', function() {
@@ -41,16 +42,16 @@ describe('Board', function() {
       players.play(6);
       players.play(9);
       players.play(7);
-      players.game.board[8] = 'X';
-  expect(players.game.checkDraw()).toEqual(true);
+      players.play(8);
+  expect(players.get('board').checkDraw()).toEqual(true);
     });
     it('should not return true if  player has not won yet', function() {
       var players = new Player();
       players.play(5);
       players.play(1);
       players.play(4);
-      players.game.board[6] = 'X'
-  expect(players.game.checkDraw()).toBeFalsy();
+      players.play(6);
+  expect(players.get('board').checkDraw()).toBeFalsy();
     });
     it('should not return true if  player has won with full board', function() {
       var players = new Player();
@@ -62,8 +63,8 @@ describe('Board', function() {
       players.play(6);
       players.play(9);
       players.play(8);
-      players.game.board[7] = 'X'
-  expect(players.game.checkDraw()).toBeFalsy();
+      players.play(7);
+  expect(players.get('board').checkDraw()).toBeFalsy();
     });
   });
   describe('clearBoard', function() {
@@ -75,9 +76,9 @@ describe('Board', function() {
       players.play(4);
       players.play(2);
       players.play(6);
-      players.game.clearBoard
+      players.get('board').clearBoard();
       for(var i = 1; i < 10; i++) {
-        expect(players.game.board[i]).toEqual(' ');
+        expect(players.get('board').get('board')[i]).toEqual(' ');
         }
       });
   });

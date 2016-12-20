@@ -1,14 +1,14 @@
-import Player from 'player';
+import Player from 'app/models/player';
 
 describe('Player', function() {
   describe('initialize', function() {
-    it('should create two new palyers', function() {
+    it('should create two new players', function() {
       var players = new Player();
-      expect(players.player1).toBeDefined();
+      expect(players.get('player1')).toBeDefined();
     });
-    it('should create two new palyers', function() {
+    it('should create two new players', function() {
       var players = new Player();
-      expect(players.player2).toBeDefined();
+      expect(players.get('player2')).toBeDefined();
     });
   });
   describe('play', function() {
@@ -17,8 +17,8 @@ describe('Player', function() {
       players.play(5);
       players.play(1);
       players.play(4);
-      players.game.board[6] = 'X'
-  expect(players.game.board[6]).toEqual('X');
+      players.play(6);
+  expect(players.get('board').get('board')[6]).toEqual('O');
     });
   });
   // describe('clearBoard', function() {
