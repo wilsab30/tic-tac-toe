@@ -18,7 +18,7 @@ describe('Player', function() {
       players.play(1);
       players.play(4);
       players.play(6);
-  expect(players.get('board').get('board')[6]).toEqual('O');
+  expect(players.get('board').get('board')[5]).toEqual('O');
     });
   });
   // describe('clearBoard', function() {

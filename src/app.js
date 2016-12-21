@@ -1,32 +1,15 @@
 import $ from 'jquery';
+import Backbone from 'backbone';
+import Player from 'app/models/player';
+import BoardView from 'app/views/boardView';
 
 $(document).ready( function() {
 
-  $('#one').click(function() {
-    console.log("space one was clicked");
+  var game = new Player();
+  var boardView = new BoardView({
+
+    el: $('#board'),
+    model: game
   });
-  $('#two').click(function() {
-    console.log("space two was clicked");
-  });
-  $('#three').click(function() {
-    console.log("space three was clicked");
-  });
-  $('#four').click(function() {
-    console.log("space four was clicked");
-  });
-  $('#five').click(function() {
-    console.log("space five was clicked");
-  });
-  $('#six').click(function() {
-    console.log("space six was clicked");
-  });
-  $('#seven').click(function() {
-    console.log("space seven was clicked");
-  });
-  $('#eight').click(function() {
-    console.log("space eight was clicked");
-  });
-  $('#nine').click(function() {
-    console.log("space nine was clicked");
-  });
+ boardView.render();
 });

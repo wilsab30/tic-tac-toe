@@ -5,7 +5,7 @@ import Player from 'app/models/player';
 describe('Board', function() {
   it('should create new empty game board', function() {
     var socks = new Board();
-    for(var i = 1; i < 10; i++) {
+    for(var i = 0; i < 9; i++) {
       expect(socks.get('board')[i]).toEqual(' ');
       }
     });
@@ -77,7 +77,7 @@ describe('Board', function() {
       players.play(2);
       players.play(6);
       players.get('board').clearBoard();
-      for(var i = 1; i < 10; i++) {
+      for(var i = 0; i < 9; i++) {
         expect(players.get('board').get('board')[i]).toEqual(' ');
         }
       });
