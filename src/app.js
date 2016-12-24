@@ -11,5 +11,9 @@ $(document).ready( function() {
     el: $('#board'),
     model: game
   });
+
+
  boardView.render();
+
+
 });
